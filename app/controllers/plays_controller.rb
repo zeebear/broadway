@@ -25,16 +25,15 @@ class PlaysController < ApplicationController
   end
 
   def update
-    @play.update(play_params)
-
-    redirect_to @play if @play.save
+    redirect_to @play if @play.update(play_params)
     return
 
     render 'edit'
   end
 
   def destroy
-
+    @play.destroy
+    redirect_to root_path
   end
 
   private
