@@ -1,8 +1,8 @@
 class PlaysController < ApplicationController
-  before_action :find_play, only: %i[show edit update delete]
+  before_action :find_play, only: %i[show edit update destroy]
 
   def index
-    @plays = Play.all
+    @plays = Play.all.order('created_at DESC')
   end
 
   def show
