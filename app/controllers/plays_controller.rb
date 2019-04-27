@@ -10,10 +10,12 @@ class PlaysController < ApplicationController
 
   def new
     @play = current_user.play.build
+    @categories = Category.all.map { |c| [c.name, c.id] }
   end
 
   def create
     @play = current_user.play.build(play_params)
+    @play.category = params[:category_id]
 
     redirect_to root_path if @play.save
     return
@@ -25,6 +27,8 @@ class PlaysController < ApplicationController
   end
 
   def update
+    @play.category = params[:category_id]
+
     redirect_to @play if @play.update(play_params)
     return
 
@@ -39,7 +43,7 @@ class PlaysController < ApplicationController
   private
 
   def play_params
-    params.require(:play).permit(:title, :description, :director)
+    params.require(:play).permit(:title, :description, :director, :category_id)
   end
 
   def find_play
