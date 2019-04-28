@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: diyosnlxf
+  api_key: '779628944384298'
+  api_secret: "-pSh1i89jCjiTkepci2alrMSR6E"
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: diyosnlxf
+  api_key: '779628944384298'
+  api_secret: "-pSh1i89jCjiTkepci2alrMSR6E"
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: diyosnlxf
+  api_key: '779628944384298'
+  api_secret: "-pSh1i89jCjiTkepci2alrMSR6E"
+  enhance_image_tag: true
+  static_file_support: false
