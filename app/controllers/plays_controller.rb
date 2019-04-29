@@ -5,8 +5,8 @@ class PlaysController < ApplicationController
     if params[:category].blank?
       @plays = Play.all.order('created_at DESC')
     else
-      @category_id = Category.find_by(name: params[:category]).id
-      @plays = Play.where(:category_id => category_id).order("created_at DESC")
+      @category_id = Category.find_by(name: params[:category])
+      @plays = Play.where(category_id: @category_id).order("created_at DESC")
     end
   end
 
@@ -14,12 +14,13 @@ class PlaysController < ApplicationController
   end
 
   def new
-    @play = current_user.play.build
+    @play = Play.new
     @categories = Category.all.map { |c| [c.name, c.id] }
   end
 
   def create
-    @play = current_user.play.build(play_params)
+    @play = Play.new(play_params)
+    @play.user = current_user
     @play.category = params[:category_id]
 
     redirect_to root_path if @play.save

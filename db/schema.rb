@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(version: 2019_04_28_222501) do
     t.string "director"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id_id"
-    t.integer "category_id_id"
+    t.integer "user_id"
+    t.integer "category_id"
     t.string "photo"
-    t.index ["category_id_id"], name: "index_plays_on_category_id_id"
-    t.index ["user_id_id"], name: "index_plays_on_user_id_id"
+    t.index ["category_id"], name: "index_plays_on_category_id"
+    t.index ["user_id"], name: "index_plays_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
