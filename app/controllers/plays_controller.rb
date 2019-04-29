@@ -21,7 +21,7 @@ class PlaysController < ApplicationController
   def create
     @play = Play.new(play_params)
     @play.user = current_user
-    @play.category = params[:category_id]
+    @play.category = Category.find(params[:category_id].to_i)
 
     redirect_to root_path if @play.save
     return
@@ -33,7 +33,7 @@ class PlaysController < ApplicationController
   end
 
   def update
-    @play.category = params[:category_id]
+    @play.category = Category.find(params[:category_id].to_i)
 
     redirect_to @play if @play.update(play_params)
     return
