@@ -16,3 +16,5 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+//= require jquery-ui
+//= require jquery.raty.js

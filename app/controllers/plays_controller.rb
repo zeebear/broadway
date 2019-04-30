@@ -12,10 +12,11 @@ class PlaysController < ApplicationController
   end
 
   def show
-    if @play.review.blank?
+    if @play.reviews.blank?
       @average_review = 0
     else
       @average_review = @play.reviews.average(:rating).round(2)
+      # @average_review = 3
     end
   end
 

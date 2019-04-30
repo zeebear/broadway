@@ -38,6 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'simple_form', '~> 4.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'sassc-rails', '~> 2.1', '>= 2.1.1'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'cloudinary', '~> 1.11', '>= 1.11.1'
