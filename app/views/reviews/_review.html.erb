@@ -1,4 +1,5 @@
 <div class="review">
+  <div class="review-rating" data-score ="<%= review.rating %>"></div>
   <p>
     <%= review.rating %>
   </p>
@@ -10,7 +11,7 @@
     <% if review.user == current_user %>
       <div class="links btn-group">
         <%= link_to "Edit", edit_play_review_path(review.play, review), class: "btn btn-custom" %>
-        <%= link_to "Delete", play_review_path(review.play, review), method: delete, data: { confirm: "Are you sure you want to delete this?" }, class: "btn btn-custom" %>
+        <%= link_to "Delete", play_review_path(review.play, review), method: 'delete', data: { confirm: "Are you sure you want to delete this?" }, class: "btn btn-custom" %>
       </div>
     <% end %>
   <% end %>

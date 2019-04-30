@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_play
   before_action :set_review, only: %i[edit update destroy]
+  before_action :authenticate_user, only: %i[new edit]
 
   def new
     @review = Review.new
@@ -21,7 +22,7 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    redirect_to play_path(@play) if @review.update
+    redirect_to play_path(@play) if @review.update(review_params)
     return
 
     render 'edit'
