@@ -1,5 +1,5 @@
 <div class="review">
-  <div id="review-rating" data-score ="<%= review.rating %>"></div>
+  <div class="review-rating" data-score ="<%= review.rating %>"></div>
   <p class="review-comment">
     <%= review.comment %>
   </p>
@@ -15,7 +15,7 @@
 </div>
 
 <script>
-  $('#review-rating').raty({
+  $('.review-rating').raty({
     readOnly : true,
     score: function() {
       return $(this).attr('data-score');
