@@ -1,12 +1,17 @@
-<h1>Edit the play information</h1>
+<div class="col-md-10 col-md-offset-1">
+  <div class="new-play-form">
 
-<%= simple_form_for @play, html: { multipart: true } do |f| %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.select :category_id, @categories
-  <%= f.input :title, label: 'Play Title' %>
-  <%= f.input :description %>
-  <%= f.input :director %>
-  <%= f.button :submit %>
-<% end %>
+    <h1>Edit the play information</h1>
 
+    <%= simple_form_for @play, html: { multipart: true } do |f| %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.select :category_id, @categories
+      <%= f.input :title, label: 'Play Title' %>
+      <%= f.input :description %>
+      <%= f.input :director %>
+      <%= f.button :submit %>
+    <% end %>
+
+  </div>
+</div>
